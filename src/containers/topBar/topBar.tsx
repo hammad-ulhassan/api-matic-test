@@ -13,7 +13,7 @@ const TopBar = ({ onResponse }: any) => {
   };
 
   return (
-    <header className="py-3 mb-3 border-bottom sticky-top navbar-light bg-light">
+    <header className="py-3 border-bottom sticky-top navbar-light bg-light">
       <div className="container-fluid d-grid gap-3 align-items-center">
         <div className="d-flex align-items-center">
           <div className="w-100 me-3">
