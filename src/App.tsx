@@ -2,9 +2,9 @@ import React, { Component, useState } from "react";
 import { SideBar } from "./components/sideBar/sideBar";
 import BodyBox from "./containers/bodyBox";
 import TopBar from "./containers/topBar/topBar";
-interface IPage {
-  title?: string;
-  body?: string;
+export interface IPage {
+  title: string;
+  bodyText: string;
 }
 
 interface IState {
@@ -16,7 +16,10 @@ interface IState {
 const initState: IState = {
   payload: [],
   menuItems: [],
-  activePage: {},
+  activePage: {
+    title: "",
+    bodyText: "",
+  },
 };
 
 const getTitlesArray = (pages: any) => {
@@ -39,24 +42,28 @@ const App = () => {
           })
         }
       />
-      <SideBar
-        menuItems={appState.menuItems}
-        onMenuItemClick={(selectedMenuItem: any) => {
-          console.log(selectedMenuItem)
-          setAppState((prevState: any) => {
-            return {
-              ...prevState,
-              activePage: appState.payload.filter(
-                (page: any) => page.title === selectedMenuItem
-              )[0],
-            };
-          });
-        }}
-        activeItem={appState.activePage.title}
-      />
-      <main className="Content">
-        <BodyBox></BodyBox>
-      </main>
+      <div className="container-fluid">
+        <div className="row">
+          <SideBar
+            menuItems={appState.menuItems}
+            onMenuItemClick={(selectedMenuItem: any) => {
+              console.log(selectedMenuItem);
+              setAppState((prevState: any) => {
+                return {
+                  ...prevState,
+                  activePage: appState.payload.filter(
+                    (page: any) => page.title === selectedMenuItem
+                  )[0],
+                };
+              });
+            }}
+            activeItem={appState.activePage.title}
+          />
+          <main className="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+            <BodyBox activePage={appState.activePage}></BodyBox>
+          </main>
+        </div>
+      </div>
     </div>
   );
 };

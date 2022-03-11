@@ -1,19 +1,16 @@
 import React, { Component, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import { IPage } from "../App";
 
-interface IPage {
-  title: string;
-  bodyText: string;
-}
-interface IBodyBoxState {
-  loading: Boolean;
-  page: IPage;
-}
-const BodyBox = () =>{
+const BodyBox = (props:any) =>{
     return (
         <div>
-            
+            <h1>{props.activePage.title}</h1>
+            <ReactMarkdown
+              children={props.activePage.bodyText}
+              remarkPlugins={[remarkGfm]}
+            />
         </div>
     );
 }

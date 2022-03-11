@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Aux } from "../../hoc/Aus";
 import "./sideBar.css";
 
 export const SideBar: React.FC<any> = ({
@@ -7,21 +6,28 @@ export const SideBar: React.FC<any> = ({
   onMenuItemClick,
   activeItem,
 }) => {
-    console.log(activeItem)
   return (
-    <div className="sidebar">
-      {menuItems.length > 0 &&
-        menuItems.map((item: any, index: number) => {
-          return (
-            <button
-              key={`${item}-${index}`}
-              onClick={()=>onMenuItemClick(item)}
-              className={activeItem===item ? "selectedMenu" : undefined}
-            >
-              {item}
-            </button>
-          );
-        })}
-    </div>
+    <nav className="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+      <div className="position-sticky pt-3">
+          <span>
+              <h3>Menu</h3>
+          </span>
+        <ul className="nav flex-column">
+          {menuItems.length > 0 &&
+            menuItems.map((item: any, index: number) => {
+              return (
+                <li className="nav-item" key={`${item}-${index}`}>
+                  <a 
+                   
+                  onClick={() => onMenuItemClick(item)}
+                  className={activeItem === item ? "nav-link active" : "nav-link"}
+                  >
+                      {item}</a>
+                </li>
+              );
+            })}
+        </ul>
+      </div>
+    </nav>
   );
 };
