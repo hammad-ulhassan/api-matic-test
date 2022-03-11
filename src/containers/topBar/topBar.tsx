@@ -39,18 +39,3 @@ const TopBar = ({ onResponse }: any) => {
 
 export default TopBar;
 
-/***
- * <div className="w-100 me-3">
-          Enter Url Here:
-          <input
-            className="form-control"
-            type="text"
-            name="customurl"
-            value={url}
-            onChange={(e) => setUrl(e.target.value)}
-          />
-          <button className="btn btn-primary" type="button" onClick={handleSubmit}>
-            Get Documentation
-          </button>
-        </div>
- */

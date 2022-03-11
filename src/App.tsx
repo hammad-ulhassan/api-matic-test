@@ -28,7 +28,6 @@ const getTitlesArray = (pages: any) => {
 
 const App = () => {
   const [appState, setAppState] = useState(initState); //global store. is an object. api response
-  console.log(appState);
   return (
     <div>
       <TopBar
@@ -47,7 +46,6 @@ const App = () => {
           <SideBar
             menuItems={appState.menuItems}
             onMenuItemClick={(selectedMenuItem: any) => {
-              console.log(selectedMenuItem);
               setAppState((prevState: any) => {
                 return {
                   ...prevState,

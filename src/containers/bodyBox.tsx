@@ -20,16 +20,3 @@ const BodyBox = (props: any) => {
 };
 
 export default BodyBox;
-
-/**
- * 
- * 
-          {this.state.loading ? (
-            "loading..."
-          ) : (
-            <ReactMarkdown
-              children={this.state.page.bodyText}
-              remarkPlugins={[remarkGfm]}
-            />
-          )}
- */
