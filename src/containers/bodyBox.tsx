@@ -10,11 +10,10 @@ interface IBodyBoxState {
   loading: Boolean;
   page: IPage;
 }
-const BodyBox = ({activePage}) =>{
+const BodyBox = () =>{
     return (
         <div>
-            <h1></h1>
-            <<ReactMarkdown>
+            
         </div>
     );
 }
