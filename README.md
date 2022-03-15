@@ -2,10 +2,6 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Disclaimer
-
-This project is my assessment for APIMatic.
-
 ### `npm start`
 
 Runs the app in the development mode.\
